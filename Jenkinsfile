@@ -4,8 +4,8 @@ agent any
 environment {
     DOCKER_USER = "nidhinpai"
 
-    FRONTEND_IMAGE = "${DOCKER_USER}/react-express-mongodb-frontend"
-    BACKEND_IMAGE  = "${DOCKER_USER}/react-express-mongodb-backend"
+    FRONTEND_IMAGE = "${DOCKER_USER}/react-express-mongodb-docker-frontend"
+    BACKEND_IMAGE  = "${DOCKER_USER}/react-express-mongodb-docker-backend"
 }
 
 stages {
