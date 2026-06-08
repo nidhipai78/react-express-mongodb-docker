@@ -2,10 +2,8 @@ pipeline {
 agent any
 
 environment {
-    DOCKER_USER = "nidhinpai"
-
-    FRONTEND_IMAGE = "${DOCKER_USER}/react-express-mongodb-docker-frontend"
-    BACKEND_IMAGE  = "${DOCKER_USER}/react-express-mongodb-docker-backend"
+    FRONTEND_IMAGE = "nidhinpai/react-express-mongodb-docker-frontend"
+    BACKEND_IMAGE  = "nidhinpai/react-express-mongodb-docker-backend"
 }
 
 stages {
@@ -18,13 +16,13 @@ stages {
 
     stage('Build Frontend Image') {
         steps {
-            bat "docker build -t %FRONTEND_IMAGE%:latest ./frontend"
+            bat "docker build --target development -t %FRONTEND_IMAGE%:latest ./frontend"
         }
     }
 
     stage('Build Backend Image') {
         steps {
-            bat "docker build -t %BACKEND_IMAGE%:latest ./backend"
+            bat "docker build --target development -t %BACKEND_IMAGE%:latest ./backend"
         }
     }
 
